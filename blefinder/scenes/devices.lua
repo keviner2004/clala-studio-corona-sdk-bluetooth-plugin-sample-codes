@@ -7,6 +7,7 @@ local widget = require( "widget" )
 local bleutil = require("bleutil")
 local LinearGroup= require("LinearGroup")
 local ListView = require("ListView")
+local screen = require("screen")
 local scene = composer.newScene()
 
 -- -----------------------------------------------------------------------------------
@@ -298,9 +299,9 @@ function scene:create( event )
     })
 
     tableView.x = display.contentCenterX
-    tableView.y = tableView.height/ 2 + navigationBar.height
+    tableView.y = tableView.height/2 + navigationBar.height + navigationBar.y
 
-    print("?????", tableView.y - tableView.height/ 2)
+    --print("?????", tableView.y - tableView.height/ 2)
 
     sceneGroup:insert(tableView)
     self.deviceTable = tableView

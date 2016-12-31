@@ -1,6 +1,40 @@
+local function isModuleAvailable(name)
+  if package.loaded[name] then
+    return true
+  else
+    for _, searcher in ipairs(package.searchers or package.loaders) do
+      local loader = searcher(name)
+      if type(loader) == 'function' then
+        package.preload[name] = loader
+        return true
+      end
+    end
+    return false
+  end
+end
+
+local function warn()
+    print("bluetooth module not found")
+end
+
+local manager = {}
+
+if not isModuleAvailable("plugin.bluetooth") then
+    manager.addEventListener = warn
+    manager.removeEventListener = warn
+    manager.discover = warn
+    manager.stopDiscover = warn
+    manager.connect = warn
+    manager.disconnect = warn
+    manager.newServer = warn
+    manager.newService = warn
+    manager.newCharacteristic = warn
+    return manager
+end
+
 local library = require "plugin.bluetooth"
 --local EvtD = require "EventDispatcher"
-local manager = {}
+
 --local manager = EvtD()
 local listenerBags = {}
 local removeBags = {}
@@ -82,5 +116,8 @@ manager.discover = library.discover
 manager.stopDiscover = library.stopDiscover
 manager.connect = library.connect
 manager.disconnect = library.disconnect
+manager.newServer = library.newServer
+manager.newService = library.newService
+manager.newCharacteristic = library.newCharacteristic
 
 return manager

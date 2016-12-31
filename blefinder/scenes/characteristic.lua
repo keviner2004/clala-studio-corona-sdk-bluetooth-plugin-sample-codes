@@ -132,7 +132,7 @@ end
 function scene:refreshDescriptorTable()
     self.descriptorTable:deleteAllRows()
     for i = 1, #self.tabledata do
-        print("Insert descriptor row~~~~~~~~~~~~~")
+        --print("Insert descriptor row~~~~~~~~~~~~~")
         local targetDescriptor = self.tabledata[i]
         self.descriptorTable:insertRow({
             id = targetDescriptor.uuid,
@@ -495,7 +495,7 @@ function scene:create( event )
     container:resize()
 
     container.x = display.contentWidth/2
-    container.y = display.contentHeight/2 + navigationBar.height
+    container.y = display.contentHeight/2 + navigationBar.height + navigationBar.y
 
     sceneGroup:insert(background)
     sceneGroup:insert(container)

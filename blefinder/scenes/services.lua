@@ -117,7 +117,7 @@ end
 function scene:refresh()
     self.tableView:deleteAllRows()
     for i = 1, #self.tabledata do
-        print("Insert service row~~~~~~~~~~~~~")
+        --print("Insert service row~~~~~~~~~~~~~")
         local targetService = self.tabledata[i].service
         local characteristics = self.tabledata[i].characteristics
         self.tableView:insertRow({
@@ -241,7 +241,7 @@ function scene:createTableView()
     )
 
     tableView.x = display.contentCenterX
-    tableView.y = tableView.height / 2 + navigationBar.height
+    tableView.y = tableView.height / 2 + navigationBar.height + navigationBar.y
     sceneGroup:insert(tableView)   
     self.tableView = tableView
 end

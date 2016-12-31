@@ -1,5 +1,5 @@
 local widget = require("widget")
-
+local screen = require("screen")
 local navBar
 
 local function handleLeftButton( event )
@@ -49,5 +49,8 @@ navBar = widget.newNavigationBar({
    rightButton = rightButton,
    includeStatusBar = false
 })
+print("move my navigation bar", screen.top, screen.left)
+
+navBar.y = screen.top
 
 return navBar

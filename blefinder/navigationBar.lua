@@ -44,7 +44,7 @@ function widget.newNavigationBar( options )
 
    local barContainer = display.newGroup()
    local background = display.newRect( barContainer, opt.x, opt.y, opt.width, opt.height + statusBarPad )
-   print("background", background.width, background.height)
+   --print("background", background.width, background.height)
    if ( opt.background ) then
       background.fill = { type="image", filename=opt.background }
    elseif ( opt.backgroundColor ) then
@@ -109,7 +109,7 @@ function widget.newNavigationBar( options )
       leftButton.x = 15 + leftButton.width * 0.5
       leftButton.y = barContainer.titleGroup.y
       barContainer:insert( leftButton )  -- insert button into container group
-      print("dataf1", barContainer.width, barContainer.height)
+      --print("dataf1", barContainer.width, barContainer.height)
    end
  
    local rightButton
@@ -138,14 +138,14 @@ function widget.newNavigationBar( options )
       rightButton.x = background.width - rightButton.width * 0.5 - 15
       rightButton.y = barContainer.titleGroup.y
       barContainer:insert( rightButton )  -- insert button into container group
-      print("dataf2", barContainer.width, barContainer.height)
+      --print("dataf2", barContainer.width, barContainer.height)
    end
 
    barContainer.leftButton = leftButton
    barContainer.rightButton = rightButton
 
-   print("display", display.contentWidth, display.contentHeight)
-   print("dataf", barContainer.width, barContainer.height)
+   --print("display", display.contentWidth, display.contentHeight)
+   --print("dataf", barContainer.width, barContainer.height)
 
    function barContainer:setTitle(text1, text2)
       self.titleGroup:removeSelf()

@@ -43,7 +43,7 @@ Group.new = function(options)
     end
 
     if self.layout == Group.VERTICAL and self.alignment == Group.Left then
-      print("detect alignment")
+      --print("detect alignment")
       for i = 1, self.numChildren do
         if self[i].width > al then
           al = self[i].width
@@ -66,10 +66,10 @@ Group.new = function(options)
   end
 
   function group:resizeAll()
-    print("reszize All")
+    --print("reszize All")
     for i = 1, self.numChildren do
       if self[i].__resizable then
-        print("Found sizable container")
+        --print("Found sizable container")
         self[i]:resizeAll()
       end
     end
