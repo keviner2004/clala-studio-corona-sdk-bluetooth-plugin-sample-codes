@@ -43,11 +43,12 @@ settings =
             publisherId = "com.coronalabs",
             supportedPlatforms = { iphone=true, android=true, osx=true, win32=true }
         },
+		["plugin.ble"] =
+		{
+			-- required
+			publisherId = "com.clalastudio",
+			supportedPlatforms = { iphone=true, android=false, osx=false, win32=false }
+		},
     },
-	["plugin.ble"] =
-	{
-		-- required
-		publisherId = "com.clalastudio",
-		supportedPlatforms = { iphone=true, android=false, osx=false, win32=false }
-	},
+
 }
