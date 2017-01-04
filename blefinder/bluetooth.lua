@@ -19,7 +19,7 @@ end
 
 local manager = {}
 
-if not isModuleAvailable("plugin.bluetooth") then
+if not isModuleAvailable("plugin.ble") then
     manager.addEventListener = warn
     manager.removeEventListener = warn
     manager.discover = warn
@@ -32,7 +32,7 @@ if not isModuleAvailable("plugin.bluetooth") then
     return manager
 end
 
-local library = require "plugin.bluetooth"
+local library = require "plugin.ble"
 --local EvtD = require "EventDispatcher"
 
 --local manager = EvtD()
